@@ -1,0 +1,13 @@
+.link {
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.16px;
+    transition: .1s linear;
+    color: var(--color-primary-600);
+
+    &:hover {
+        color: var(--color-primary-500);
+    }
+}

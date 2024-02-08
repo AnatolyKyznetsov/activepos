@@ -1,0 +1,98 @@
+.title-main {
+    font-family: var(--font-second);
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.title-section {
+    font-family: var(--font-main);
+    font-size: 48px;
+    line-height: 1.17;
+    letter-spacing: -0.3px;
+    font-weight: 400;
+}
+
+.title-block {
+    font-family: var(--font-second);
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.title-sm {
+    font-family: var(--font-main);
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: -0.3px;
+    font-weight: 500;
+}
+
+.title-xs {
+    font-family: var(--font-main);
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: $md) {
+    .title-main {
+        font-size: 26px;
+        line-height: 1.23;
+    }
+
+    .title-section {
+        font-size: 32px;
+        line-height: 1.25;    
+    }
+
+    .title-block {
+        font-size: 24px;
+        line-height: 1.17;
+    }
+
+    .title-sm {
+        font-size: 22px;
+        line-height: 1.09;
+    }
+
+    .title-xs {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .title-main {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0;
+    }
+
+    .title-section {
+        font-size: 28px;
+        line-height: 1.14;
+    }
+
+    .title-block {
+        font-size: 22px;
+        line-height: 1.27;
+        letter-spacing: 0;
+    }
+
+    .title-sm {
+        font-size: 18px;
+        line-height: 1.33em;
+    }
+
+    .title-xs {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.16px;
+    }
+}

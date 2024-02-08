@@ -1,0 +1,128 @@
+.problems {
+    background: var(--color-gray-950);
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+        max-width: 432px;
+    }
+
+    &__button {
+        @extend .button-reset;
+        @extend .title-sm;
+
+        color: var(--color-neutral-white-56);
+
+        &:hover {
+            color: var(--color-neutral-white-72);
+        }
+
+        &.is-active {
+            color: var(--color-neutral-white-100);
+        }
+    }
+
+    &__contents {
+        max-width: calc(50% + 35px);
+        width: 100%;
+    }
+
+    &__content {
+        padding-left: 40px;
+        width: 100%;
+        max-width: 696px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 48px;
+        display: none;
+
+        &.is-active {
+            display: flex;
+        }
+    }
+
+    &__block {
+        &:first-of-type {
+            .problems__text {
+                &::before {
+                    background: url('./images/icons/warning.svg') no-repeat center;
+                }
+            }
+        }
+        
+        &:last-of-type {
+            .problems__text {
+                &::before {
+                    background: url('./images/icons/check-green.svg') no-repeat center;
+                }
+            }
+        }
+    }
+
+    &__lettering {
+        @extend .lettering-standard;
+        
+        color: var(--color-neutral-white-56);
+        margin-bottom: 8px;
+
+        span {
+            color: var(--color-primary-500);
+        }
+    }
+
+    &__text {
+        @extend .text-standard;
+
+        color: var(--color-neutral-white-100);
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 0;
+            left: -40px;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .problems {
+        &__wrapper {
+            flex-direction: column;
+        } 
+
+        &__contents {
+            max-width: 100%;
+        }
+
+        &__buttons {
+            flex-direction: row;
+            max-width: calc(100vw - 24px);
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding-bottom: 16px;
+        } 
+
+        &__button {
+            white-space: nowrap;
+
+            &:last-child {
+                margin-right: 24px;
+            }
+        }
+    }
+}

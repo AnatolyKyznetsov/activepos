@@ -1,0 +1,37 @@
+.cookie-message {
+    @extend .lettering-small;
+
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 12px;
+    padding: 16px;
+    background: var(--color-primary-950);
+    color: var(--color-neutral-white-100);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 320px;
+    width: 100%;
+    transition: .4s linear;
+    z-index: 9;
+
+    &.is-hidden {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: $md) {
+    .cookie-message {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .cookie-message {
+        max-width: calc(100% - 32px);
+    }
+}

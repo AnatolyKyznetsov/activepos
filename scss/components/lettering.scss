@@ -1,0 +1,47 @@
+.lettering-large {
+    font-family: var(--font-main);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.167;
+    letter-spacing: -0.16px;
+}
+
+.lettering-standard {
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.167;
+    letter-spacing: -0.16px;
+}
+
+.lettering-small {
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.167;
+    letter-spacing: -0.16px;
+}
+
+@media screen and (max-width: $md) {
+    .lettering-large {
+        font-size: 18px;
+        line-height: 1.11;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .lettering-large {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .lettering-standard {
+        font-size: 12px;
+        line-height: 1.16;
+    }
+    
+    .lettering-small {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+}

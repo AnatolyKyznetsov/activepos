@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: var(--color-primary-50);
+}
+
+body {
+    overflow-x: hidden;
+    font-family: var(--font-main);
+}
+
+input {
+    font-family: var(--font-main);
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: .1s linear;
+}
+
+svg {
+    transition: .1s linear;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.custom-select {
+    opacity: 0;
+}
+
+.dni {
+    display: none !important;
+}

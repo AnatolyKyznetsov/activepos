@@ -1,0 +1,95 @@
+.article {
+    & > h1 {
+        @extend .title-main;
+
+        margin-bottom: 24px;
+    }
+
+    & > h2 {
+        @extend .title-section;
+
+        margin-bottom: 24px;
+    }
+
+    & > h3 {
+        @extend .title-block;
+
+        margin-bottom: 20px;
+    }
+
+    & > p {
+        @extend .text-standard;
+
+        font-family: inherit;
+        color: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    & > ul {
+        & > li {
+            font-size: inherit !important;
+        }
+    }
+
+    & > ol {
+        & > li {
+            font-size: inherit !important;
+        }
+    }
+
+    & > ol,
+    & > ul {
+        font-family: inherit;
+        color: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        margin-top: 16px;
+        color: inherit;
+
+        li:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        p {
+            display: initial;
+        }
+
+        li {
+            a {
+                @extend .link;
+                
+                color: inherit;
+                font-size: inherit;
+                text-decoration: underline;
+                
+            }
+        }
+    }
+
+    & > p > a,
+    & > a {
+        @extend .link;
+
+        font-size: inherit;
+    }
+
+    & > a {
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+}

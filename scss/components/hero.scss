@@ -1,0 +1,83 @@
+.hero {
+    padding-top: 267px;
+    padding-bottom: 254px;
+    background: url('./images/hero.png') no-repeat bottom right / cover;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    &__tags {
+        max-width: 716px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-left: 5px;
+
+        .tag {
+            height: 30px;
+        }
+    }
+
+    &__inner {
+        max-width: 716px;
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    &__title {
+        color: var(--color-neutral-white-100);
+    }
+
+    &__text {
+        color: var(--color-neutral-white-56);
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .hero {
+        background: url('./images/hero.png') no-repeat top center / cover;
+    }
+}
+
+@media screen and (max-width: $md) {
+    .hero {
+        padding-top: 227px;
+
+        &__tags {
+            padding-left: 0;
+            gap: 4px;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .hero {
+        padding-top: 189px;
+        padding-bottom: 284px;
+
+        &__buttons {
+            flex-direction: column;
+            width: 100%;
+
+            .button {
+                width: 100%;
+            }
+        }
+    }
+}

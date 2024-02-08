@@ -1,0 +1,46 @@
+.feedback {
+    padding-bottom: 60px;
+
+    .container {
+        gap: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__block {
+        max-width: 656px;
+        width: 100%;
+    }
+
+    &__title {
+        color: var(--color-neutral-black-100);
+    }
+
+    &__text {
+        margin-top: 32px;
+        color: var(--color-neutral-black-80);
+    }
+
+    &__form {
+        max-width: 545px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .feedback {
+        &__form {
+            margin-right: 350px;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .feedback {
+        padding-bottom: 48px;
+
+        .container {
+            flex-direction: column;
+        }
+    }
+}
