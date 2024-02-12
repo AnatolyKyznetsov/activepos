@@ -7,7 +7,7 @@
     transition: .3s linear;
 
     &.is-hidden {
-        transform: translateY(-150%);
+        top: -110px;
     }
 
     .container {

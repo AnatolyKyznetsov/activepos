@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // window.addEventListener('resize', closeMenu);
+        window.addEventListener('resize', closeMenu);
     }
 
     burgerInit();

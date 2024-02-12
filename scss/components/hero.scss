@@ -9,6 +9,18 @@
         gap: 48px;
         align-items: flex-start;
         justify-content: flex-start;
+        position: relative;
+    }
+
+    &__img {
+        position: absolute;
+        bottom: -153px;
+        right: 150px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     }
 
     &__tags {
@@ -58,10 +70,22 @@
 @media screen and (max-width: $md) {
     .hero {
         padding-top: 227px;
+        padding-bottom: 315px;
 
         &__tags {
             padding-left: 0;
             gap: 4px;
+        }
+
+        &__img {
+            bottom: -293px;
+            right: 50%;
+            transform: translateX(50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            width: 100%;
         }
     }
 }
@@ -78,6 +102,10 @@
             .button {
                 width: 100%;
             }
+        }
+
+        &__img {
+            bottom: -260px;
         }
     }
 }
