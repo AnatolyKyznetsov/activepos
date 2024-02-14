@@ -94,6 +94,7 @@
     .hero {
         padding-top: 189px;
         padding-bottom: 284px;
+        background: url('./images/hero_mob.png') no-repeat bottom right / cover;
 
         &__buttons {
             flex-direction: column;
