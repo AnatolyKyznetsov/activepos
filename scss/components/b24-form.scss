@@ -1,5 +1,12 @@
 .b24-form-padding-side {
-    padding: 0 !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+}
+
+.b24-window-popup-body {
+    .b24-form-padding-side {
+        padding: 0 !important; 
+    }
 }
 
 .b24-form-border-bottom {
@@ -20,6 +27,18 @@
     margin-bottom: 32px !important;
     color: var(--color-neutral-black-100) !important;
     text-align: left !important;
+}
+
+.b24-form-header-description {
+    @extend .text-standard;
+
+    margin-bottom: 32px !important;
+    color: var(--color-neutral-black-100) !important;
+    text-align: left !important;
+}
+
+.b24-form-header-title + .b24-form-header-description {
+    margin-top: -16px !important;
 }
 
 .b24-form-btn-block {

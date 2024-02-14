@@ -24,6 +24,10 @@
     &__form {
         max-width: 545px;
         width: 100%;
+
+        .b24-form-padding-side {
+            padding: 0 !important;
+        }
     }
 }
 
