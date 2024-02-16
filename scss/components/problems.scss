@@ -103,6 +103,41 @@
     .problems {
         &__wrapper {
             flex-direction: column;
+            position: relative;
+
+            &::after,
+            &::before {
+                content: '';
+                display: block;
+                width: 36px;
+                height: 40px;
+                position: absolute;
+                top: -8px;
+                transition: .3s linear;
+                width: 70px;
+            }
+
+            &::before {
+                background: url('./images/icons/angle-left.svg') no-repeat 10% 50% / auto 45%, linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+                left: -24px;
+            }
+
+            &::after {
+                background: url('./images/icons/angle-right.svg') no-repeat 90% 50% / auto 45%, linear-gradient(-90deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+                right: -24px;
+            }
+
+            &.is-start {
+                &::before {
+                    opacity: 0;
+                }
+            }
+
+            &.is-end {
+                &::after {
+                    opacity: 0;
+                }
+            }
         } 
 
         &__contents {
@@ -111,17 +146,51 @@
 
         &__buttons {
             flex-direction: row;
-            max-width: calc(100vw - 24px);
+            max-width: calc(100% + 48px);
             overflow-x: scroll;
             overflow-y: hidden;
             padding-bottom: 16px;
+            margin-left: -24px;
         } 
 
         &__button {
             white-space: nowrap;
 
+            &:first-child {
+                margin-left: 24px;
+            }
+
             &:last-child {
                 margin-right: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .problems {
+        &__wrapper {
+            &::before {
+                left: -16px;
+            }
+
+            &::after {
+                right: -16px;
+            }
+        } 
+
+        &__buttons {
+            max-width: calc(100% + 32px);
+            margin-left: -16px;
+        } 
+
+        &__button {
+            &:first-child {
+                margin-left: 16px;
+            }
+
+            &:last-child {
+                margin-right: 16px;
             }
         }
     }

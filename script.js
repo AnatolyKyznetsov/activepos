@@ -163,10 +163,38 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', closeMenu);
     }
 
+    const problemsButtonsScrollInit = () => {
+        const buttons = document.querySelector('.js-problemsButtons');
+
+        if (!buttons) {
+            return false;
+        }
+    
+        const parent = buttons.closest('.js-problemsButtonsParent');
+    
+        if (!parent) {
+            return false;
+        }
+    
+        parent.classList.add('is-start');
+    
+        buttons.addEventListener('scroll', () => {
+            if (Math.ceil(buttons.scrollLeft + buttons.offsetWidth) >= buttons.scrollWidth) {
+                parent.classList.add('is-end');
+            } else if (buttons.scrollLeft == 0) {
+                parent.classList.add('is-start');
+            } else {
+                parent.classList.remove('is-end');
+                parent.classList.remove('is-start');
+            }
+        });
+    }
+
     burgerInit();
     showImgInit();
     tabsInit();
     cardProductVideoInit();
     initCookiePolicy();
     headerHideInit();
+    problemsButtonsScrollInit();
 });
