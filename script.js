@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         buttons.addEventListener('scroll', () => {
             if (Math.ceil(buttons.scrollLeft + buttons.offsetWidth) >= buttons.scrollWidth) {
                 parent.classList.add('is-end');
-            } else if (buttons.scrollLeft == 0) {
+            } else if (buttons.scrollLeft <= 0) {
                 parent.classList.add('is-start');
             } else {
                 parent.classList.remove('is-end');
