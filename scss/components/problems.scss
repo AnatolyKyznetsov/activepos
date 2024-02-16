@@ -146,7 +146,7 @@
 
         &__buttons {
             flex-direction: row;
-            max-width: calc(100% + 48px);
+            max-width: 100vw;
             overflow-x: scroll;
             overflow-y: hidden;
             padding-bottom: 16px;
@@ -180,7 +180,6 @@
         } 
 
         &__buttons {
-            max-width: calc(100% + 32px);
             margin-left: -16px;
         } 
 
