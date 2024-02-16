@@ -31,12 +31,18 @@
     }
 
     &__logo {
-        padding-top: 5px;
+        display: flex;
+        align-items: center;
 
         img {
             max-width: 100%;
             height: auto;
         }
+    }
+
+    &__phone {
+        flex-shrink: 0;
+        color: var(--color-neutral-white-100);
     }
 
     &__menu,
@@ -47,7 +53,7 @@
     }
     
     &__nav {
-        padding: 24px;
+        padding: 10px;
     }
 
     &__link {
@@ -60,6 +66,14 @@
 
     &__button {
         min-height: 40px;
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .header {
+        &__nav {
+            padding: 10px;
+        }
     }
 }
 
