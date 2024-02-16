@@ -115,6 +115,7 @@
                 top: -8px;
                 transition: .3s linear;
                 width: 70px;
+                pointer-events: none;
             }
 
             &::before {
