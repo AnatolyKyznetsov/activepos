@@ -1,7 +1,7 @@
 .hero {
     padding-top: 267px;
     padding-bottom: 254px;
-    background: url('./images/hero.png') no-repeat bottom right / cover;
+    background: var(--hero-background) no-repeat bottom right / cover;
 
     .container {
         display: flex;
@@ -67,7 +67,7 @@
 
 @media screen and (min-width: $lg) {
     .hero {
-        background: url('./images/hero.png') no-repeat top center / cover;
+        background: var(--hero-background) no-repeat top center / cover;
     }
 }
 
@@ -98,7 +98,7 @@
     .hero {
         padding-top: 189px;
         padding-bottom: 284px;
-        background: url('./images/hero_mob.png') no-repeat bottom right / cover;
+        background: var(--hero-background-mob) no-repeat bottom right / cover;
 
         &__buttons {
             flex-wrap: wrap;

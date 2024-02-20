@@ -214,10 +214,6 @@
     padding-bottom: 0 !important;
 }
 
-.b24-window-panel-pos-right {
-    max-width: 90vw !important;
-}
-
 .b24-form-btn-container {
     .b24-form-btn {
         width: 100% !important;
@@ -245,5 +241,9 @@
     .b24-form-btn-container {
         flex-direction: column !important;
         align-items: flex-start !important;
+    }
+
+    .b24-window-panel-pos-right {
+        max-width: 90vw !important;
     }
 }
