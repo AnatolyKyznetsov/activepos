@@ -17,10 +17,12 @@
     width: 100%;
     transition: .4s linear;
     z-index: 9;
+    transform: translateX(200%);
+    opacity: 0;
 
-    &.is-hidden {
-        transform: translateX(200%);
-        opacity: 0;
+    &.is-active {
+        transform: translateX(0);
+        opacity: 1
     }
 }
 

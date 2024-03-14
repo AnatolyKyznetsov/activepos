@@ -101,6 +101,11 @@
     &__contact {
         transition: .1s linear;
 
+        i {
+            color: var(--color-neutral-black-56);
+            font-size: 28px;
+        }
+
         img {
             max-width: 100%;
             height: auto;
