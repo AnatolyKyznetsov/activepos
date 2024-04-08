@@ -10,23 +10,16 @@
         top: -110px;
     }
 
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 100%;
-    }
-
     &__wrapper {
         pointer-events: auto;
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         background: var(--color-neutral-black-40);
         padding: 0 24px;
         height: 72px;
         border-radius: 40px;
-        gap: 30px;
+        gap: 56px;
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
     }
@@ -42,8 +35,25 @@
     }
 
     &__phone {
+        margin-left: auto;
         flex-shrink: 0;
         color: var(--color-neutral-white-100);
+
+        &_mob {
+            @extend .lettering-small;
+
+            flex-shrink: 0;
+            color: var(--color-neutral-white-100);
+            display: none;
+        }
+    }
+
+    &__menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
     }
 
     &__menu,
@@ -51,14 +61,43 @@
         display: flex;
         align-items: center;
         gap: 24px;
+        width: 100%;
     }
     
     &__nav {
         padding: 10px;
+        position: relative;
+    }
+
+    &__nav-rolled {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        display: none;
+        cursor: pointer;
+        background: url('./images/icons/angle-right.svg') no-repeat center;
+        transition: .1s linear;
+
+        &.is-opened {
+            background: url('./images/icons/angle-left.svg') no-repeat center;
+        }
+
+        &.is-shown {
+            display: flex;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__link {
-        color: var(--color-neutral-white-100)
+        color: var(--color-neutral-white-100);
+        white-space: nowrap;
+
+        &.is-rolled {
+            display: none;
+        }
     }
 
     &__burger {
@@ -153,6 +192,28 @@
             display: block;
             cursor: pointer;
         }
+
+        &__phone {
+            display: none;
+            
+            &_mob {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        
+        &__link {
+            &.is-rolled {
+                display: block;
+            }
+        }
+
+        &__nav-rolled {
+            &.is-shown {
+                display: none;
+            }
+        }
+    
     }
 }
 
@@ -160,6 +221,10 @@
     .header {
         margin-bottom: -56px;
         top: 32px;
+
+        &__logo {
+            max-width: 65px;
+        }
 
         &__inner {
             height: 56px;

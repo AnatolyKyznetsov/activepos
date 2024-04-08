@@ -1,8 +1,4 @@
 .examples {
-    & + .about {
-        padding-top: 0;
-    }
-
     &__wrapper {
         display: flex;
         gap: 16px;

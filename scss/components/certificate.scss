@@ -1,0 +1,102 @@
+.certificate {
+    &__wrapper {
+        padding-bottom: 50px;
+
+        .swiper-wrapper {
+            z-index: 11;
+        }
+    }
+
+    &__item {
+        border-radius: 16px;
+        background: var(--color-neutral-white-100);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        justify-content: space-between;
+        height: unset !important;
+        position: relative;
+        z-index: 11;
+
+        &:hover {
+            .certificate__bottom {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 150px;
+        min-height: 126px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__title {
+        @extend .title-xs;
+
+        margin-bottom: 8px;
+        color: var(--color-neutral-black-100);
+    }
+
+    &__text {
+        @extend .lettering-small;
+
+        color: var(--color-neutral-black-80);
+    }
+
+    &__bottom {
+        padding: 32px 24px 24px;
+        background: var(--color-neutral-white-100);
+        position: absolute;
+        top: calc(100% - 24px);
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+        opacity: 0;
+        transition: .1s linear;
+        pointer-events: none;
+    }
+
+    &__link {
+        @extend .link;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
+
+@media screen and (max-width: $md) {
+    .certificate {
+        &__item {
+            gap: 32px;
+        }
+
+        &__bottom {
+            position: static;
+            opacity: 1;
+            pointer-events: auto;
+            padding: 0;
+            background: transparent;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .certificate {
+        .title-section {
+            text-align: center;
+        }
+    }
+}

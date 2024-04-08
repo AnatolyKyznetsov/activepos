@@ -1,6 +1,12 @@
 .section {
     padding: 120px 0;
 
+    &_transparent {
+        &+ .section_transparent {
+            padding-top: 0;
+        }
+    }
+
     &__head {
         display: flex;
         align-items: center;
@@ -29,6 +35,20 @@
         align-items: center;
         gap: 40px;
         justify-content: space-between;
+
+        &_end {
+            justify-content: flex-end;
+        }
+
+        &_column {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+
+            .title-section {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -51,6 +71,14 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 48px;
+
+            &_column {
+                gap: 16px;
+            }
+
+            &_end {
+                margin-top: 24px;
+            }
         }
     }
 }

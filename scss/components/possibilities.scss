@@ -1,0 +1,145 @@
+.possibilities {
+    background: var(--color-primary-600);
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    &-thumbs {
+        @extend .tabs__buttons;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 40px;
+
+        &__item {
+            @extend .title-sm;
+            @extend .button-reset;
+
+            color: var(--color-neutral-white-56);
+
+            &:hover {
+                color: var(--color-neutral-white-72);
+            }
+
+            &.is-active {
+                color: var(--color-neutral-white-100);
+            }
+        }
+    }
+
+    &__block {
+        @extend .tabs__block;
+        @extend .tabs__block_blue;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 32px 24px;
+        background: var(--color-neutral-white-100);
+        border-radius: 16px;
+        align-items: center;
+        gap: 32px;
+    }
+
+    &__inner {
+        color: var(--color-neutral-black-100);
+    }
+
+    &__top {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        font-family: var(--font-main);
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.32px;
+    }
+
+    &__subtitle {
+        @extend .text-standard;
+
+        margin-top: 12px;
+    }
+
+    &__button {
+        margin-top: 50px;
+    }
+
+    &__img {
+        max-width: 718px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 16px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .possibilities {
+        .section__head {
+            .button {
+                margin-top: 24px;
+            }
+        }
+
+        &__item {
+            flex-direction: column;
+        }
+
+        &__title {
+            font-size: 32px;
+        }
+
+        &__img {
+            max-height: 262px;
+        }
+
+        &__inner {
+            .benefits-list {
+                flex-direction: column;
+            }
+        }
+
+        &-thumbs {
+            margin-left: 0;
+
+            &__item {
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .possibilities {
+        .swiper-pagination {
+            display: flex;
+            position: static !important;
+            margin-top: 32px;
+        }
+
+        &__item {
+            padding: 16px;
+        }
+
+        &__title {
+            font-size: 28px;
+        }
+    }
+}

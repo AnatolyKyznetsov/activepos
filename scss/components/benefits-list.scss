@@ -1,0 +1,35 @@
+.benefits-list {
+    display: flex;
+    gap: 8px;
+
+    &__item {
+        @extend .lettering-small;
+
+        padding: 16px;
+        border-radius: 16px;
+        background: var(--color-primary-50);
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+
+        i {
+            min-height: 24px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 21px;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .benefits-list {
+        &__item {
+            flex-direction: row;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+.help {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .title-section {
+        text-align: center;
+        width: 100%;
+
+        span {
+            color: var(--color-neutral-white-56);
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        border-radius: 16px;
+        overflow: hidden;
+        max-width: 1104px;
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--color-neutral-white-8);
+    }
+
+    &__item {
+        @extend .text-small;
+
+        max-width: 33.3%;
+        padding: 32px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: var(--color-neutral-white-80);
+    }
+
+    &__name {
+        @extend .title-block;
+
+        color: var(--color-neutral-white-100);
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .help {
+        &__list {
+            max-width: 1504px;
+        }     
+    }
+}
+
+@media screen and (min-width: $md) {
+    .help {
+        &__item {
+            &:nth-child(-n + 3) {
+                border-bottom: 1px solid var(--color-neutral-white-8);
+            }
+
+            &:not(:nth-child(3n)) {
+                border-right: 1px solid var(--color-neutral-white-8);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $sm) and (max-width: $md) {
+    .help {
+        &__item {
+            &:not(:nth-last-child(-n + 2)) {
+                border-bottom: 1px solid var(--color-gray-300);
+            }
+
+            &:nth-child(odd) {
+                border-right: 1px solid var(--color-gray-300);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .help {
+        .title-section {
+            span {
+                display: block;
+            }
+        }
+
+        &__list {
+            align-items: unset;
+        }
+
+        &__item {
+            max-width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .help {
+        .title-section {
+            span {
+                display: block;
+            }
+        }
+
+        &__list {
+            align-items: unset;
+        }
+
+        &__item {
+            max-width: 100%;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--color-gray-300);
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.bonus {
+    &__time {
+        @extend .text-xs;
+
+        margin-bottom: 24px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        i {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    &__lettering {
+        @extend .lettering-standard;
+
+        margin-top: 48px;
+        max-width: 760px;
+        color: var(--color-neutral-black-56);
+    }
+
+    &-item {
+        border-radius: 16px;
+        background: var(--color-neutral-white-100);
+        max-width: calc(33.33% - 11px);
+        width: 100%;
+        padding: 24px;
+
+        &:first-child {
+            background: var(--color-primary-600);
+            color: var(--color-neutral-white-100);
+        }
+
+        &__head {
+            padding: 24px 24px 16px;
+            margin: -24px -24px 16px;
+            border-bottom: 1px solid var(--color-gray-300);
+        }
+
+        &__title {
+            @extend .title-sm;
+
+            margin-bottom: 24px;
+        }
+
+        &__check-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &__check-item {
+            @extend .text-standard;
+
+            display: flex;
+            gap: 10px;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url('./images/icons/check.svg') no-repeat center / cover;
+            }
+        }
+
+        &__lettering {
+            @extend .lettering-standard;
+
+            color: var(--color-neutral-white-80);
+            margin-top: 19px;
+            display: inline-block;
+        }
+    }
+
+    &-label {
+        @extend .text-small;
+
+        color: var(--color-neutral-black-56);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &__value {
+            @extend .title-sm;
+
+            display: inline-block;
+            color: var(--color-neutral-black-100);
+
+            &_success {
+                color: var(--color-brand-dark);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .bonus {
+        &-item {
+            max-width: 100%;
+        }   
+    }
+}

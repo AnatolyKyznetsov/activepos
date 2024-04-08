@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ActivePOS</title>
+    <link rel="stylesheet" href="./vendors/css/swiper.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -13,36 +14,40 @@
                 <div class="header__wrapper js-headerWrapper">
                     <div class="header__inner">
                         <a href="#hero" class="header__logo">
-                            <img src="./images/logo.png" alt="">
+                            <img src="./images/logo.svg" alt="">
+                        </a>
+                        <a href="tel:+74957837287" class="header__phone_mob">
+                            +7 (495) 783-72-87
                         </a>
                         <div class="header__burger js-headerBurger"></div>
                     </div>
                     <div class="header__menu js-headerMenu">
                         <nav class="header__nav">
-                            <a href="#about" class="link header__link js-closeBurger">
+                            <a href="#about" class="link header__link js-headerLink">
                                 О продукте
                             </a>
-                            <a href="#examples" class="link header__link js-closeBurger">
+                            <a href="#examples" class="link header__link js-headerLink">
                                 Примеры
                             </a>
-                            <a href="#suitable" class="link header__link js-closeBurger">
+                            <a href="#suitable" class="link header__link js-headerLink">
                                 Для кого
                             </a>
-                            <a href="#work" class="link header__link js-closeBurger">
+                            <a href="#work" class="link header__link js-headerLink">
                                 Как работает
                             </a>
-                            <a href="#problems" class="link header__link js-closeBurger">
+                            <a href="#problems" class="link header__link js-headerLink">
                                 Решения проблем
                             </a>
-                            <a href="#feedback" class="link header__link js-closeBurger">
+                            <a href="#feedback" class="link header__link js-headerLink">
                                 Контакты
                             </a>
                         </nav>
+                        <span class="header__nav-rolled js-menuRolled"></span>
                         <a href="tel:+74957837287" class="header__phone link">
                             +7 (495) 783-72-87
                         </a>
                         <button class="button button_primary header__button js-closeBurger">
-                            Рассчитать проект
+                            Оставить заявку
                         </button>
                     </div>
                 </div>
@@ -50,13 +55,18 @@
         </header>
         <main class="app__main">
             <style>
-                .hero {
-                    --hero-background: url('./images/hero.png');
-                    --hero-background-mob: url('./images/hero_mob.png');
+                :root {
+                    --hero-background-color: #030712;
+                    --hero-background: url('./local_images/hero2.png');
+                    --hero-background-mob: url('./local_images/hero_mob.png');
                 }
             </style>
             <section class="hero" id="hero">
                 <div class="container">
+                    <!-- <div class="hero__img">
+                        <img src="./local_images/hero-img.png" alt="">
+                    </div> -->
+
                     <div class="hero__tags">
                         <span class="tag tag_light">
                             Сокращение финансовых потерь
@@ -85,603 +95,1453 @@
                             Рассчитать проект
                         </button>
                     </div>
-                    <div class="hero__img">
-                        <img src="./images/hero-img.png" alt="">
-                    </div>
+
+                    <ul class="hero__benefits">
+                        <li class="hero__benefit js-viewportShow viewport-opacity" data-delay="1">
+                            <span class="title-block">86%</span>
+                            покупателей отказываются от покупок из-за образования длинных очередей
+                        </li>
+                        <li class="hero__benefit js-viewportShow viewport-opacity" data-delay="2">
+                            <span class="title-block">71%</span>
+                            краж происходит по причине слабой системы внутреннего контроля (KMPG)
+                        </li>
+                        <li class="hero__benefit js-viewportShow viewport-opacity" data-delay="3">
+                            <span class="title-block">47%</span>
+                            потерь ритейла составляют внутренние кражи
+                        </li>
+                        <li class="hero__benefit js-viewportShow viewport-opacity" data-delay="4">
+                            <span class="title-block">39%</span>
+                            покупателей не совершают повторные покупки из-за плохого обслуживания
+                        </li>
+                    </ul>
                 </div>
             </section>
-            <section class="section about" id="about">
-                <div class="container">
-                    <div class="lettering-large about__title_mob">
-                        О продукте
-                    </div>
-                    <div class="about__aside">
-                        <h2 class="lettering-large about__title">
-                            О продукте
-                        </h2>
-                        <div class="card-product js-cardProduct">
-                            <div class="card-product__head card-product__head_video js-cardProductHead">
-                                <img src="./images/card-product.png" alt="">
-                    
-                                <div class="card-product__video js-cardProductVideo">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FMydYUhuMvo?si=QMa4cpBOjrUmsUKG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                            <div class="card-product__inner">
-                                <h3 class="card-product__title">
-                                    <span>
-                                        Бесплатно
-                                    </span>
-                                    попробовать ActivePOS
-                                </h3>
-                                <p class="card-product__text">
-                                    Предоставляем вам уникальную возможность использовать модуль TRASSIR ActivePOS абсолютно бесплатно в течение 30 дней! 
-                                    Оцените все его функции на своем объекте – просто, удобно, без обязательств.
-                                </p>
-                            </div>
-                            <button class="button button_secondary">
-                                Заказать консультацию
-                            </button>
-                        </div>
-                    </div>
-                    <div class="about__wrapper">
-                        <div class="about__content">
-                            Наш интеллектуальный модуль контроля банковских и кассовых операций предоставляет возможность подключения четырех и более кассовых терминалов в систему. <br><br>
-                            Мы предлагаем расширение функционала через подключение дополнительных модулей, настраиваемых под ваши уникальные задачи. <br><br>
-                            Этот модуль разработан на основе многолетнего опыта ведущих специалистов в сфере торговли, что обеспечивает надежность и эффективность его работы.
-                        </div>
-                        <ul class="about__list">
-                            <li class="about__item">
-                                <span class="title-block">
-                                    100+
-                                </span>
-                                типов нарушений
-                            </li>
-                            <li class="about__item">
-                                <span class="title-block">
-                                    50%
-                                </span>
-                                снижение кассовых потерь
-                            </li>
-                            <li class="about__item">
-                                <span class="title-block">
-                                    10 000+
-                                </span>
-                                Модулей TRASSIR ежедневно сокращают финансовые потери ваших заказчиков
-                            </li>
-                            <li class="about__item">
-                                <span class="title-block">
-                                    99,9%
-                                </span>
-                                оборудования совместно с экосистемой TRASSIR
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="section examples" id="examples">
-                <div class="container">
-                    <div class="section__head">
-                        <h2 class="title-section">
-                            Популярные примеры  нарушений
-                        </h2>
-                        <div class="section__head-block">
-                            <p class="text-standard">
-                                Больше половины всех потерь происходит на кассе
-                            </p>
-                        </div>
-                    </div>
-                    <div class="examples__wrapper">
-                        <div class="card-simple card-simple_fluid">
-                            <div class="card-simple__content">
-                                <div class="card-simple__icon">
-                                    <i class="fa-solid fa-handcuffs"></i>
-                                </div>
-                                <h3 class="title-xs card-simple__title">
-                                    Умышленное  воровство 
-                                </h3>
-                                <p class="text-xs card-simple__text">
-                                    Оператор или администратор намеренное производит махинации с кассовым аппаратом, которые необходимо выявлять и предотвращать.
-                                </p>
-                            </div>
-                            <div class="card-simple__tags">
-                                <span class="tag tag_dark">
-                                    Аннулирование чека
-                                </span>
-                                <span class="tag tag_dark">
-                                    Возврат товара
-                                </span>
-                                <span class="tag tag_dark">
-                                    Частичное пробитие чека
-                                </span>
-                                <span class="tag tag_dark">
-                                    Лишний товар
-                                </span>
-                                <span class="tag tag_dark">
-                                    Непогашенный чек
-                                </span>
-                                <span class="tag tag_dark">
-                                    Товар по акции 1+1
-                                </span>
-                                <span class="tag tag_dark">
-                                    Мошенничество с картой лояльности
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-simple card-simple_fluid">
-                            <div class="card-simple__content">
-                                <div class="card-simple__icon">
-                                    <i class="fa-solid fa-circle-exclamation"></i>
-                                </div>
-                                <h3 class="title-xs card-simple__title">
-                                    Ошибки  и невнимательность
-                                </h3>
-                                <p class="text-xs card-simple__text">
-                                    Новый сотрудник часто ошибается во время продажи товаров. Система считывает ошибки и выводит события для анализа и отчётности.
-                                </p>
-                            </div>
-                            <div class="card-simple__tags">
-                                <span class="tag tag_dark">
-                                    Кассир путается в товарах
-                                </span>
-                                <span class="tag tag_dark">
-                                    Ошибки в количестве товаров
-                                </span>
-                                <span class="tag tag_dark">
-                                    Пропуск товара
-                                </span>
-                                <span class="tag tag_dark">
-                                    Ошибка при удалении
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-simple card-simple_fluid">
-                            <div class="card-simple__content">
-                                <div class="card-simple__icon">
-                                    <i class="fa-solid fa-cash-register"></i>
-                                </div>
-                                <h3 class="title-xs card-simple__title">
-                                    Нарушение кассовой дисциплины
-                                </h3>
-                                <p class="text-xs card-simple__text">
-                                    Отсутствие дисциплины дополнительно анализируется в системе и отображается в событиях.
-                                </p>
-                            </div>
-                            <div class="card-simple__tags">
-                                <span class="tag tag_dark">
-                                    Время открытия и закрытия магазина
-                                </span>
-                                <span class="tag tag_dark">
-                                    Общение по телефону во время работы
-                                </span>
-                                <span class="tag tag_dark">
-                                    Уход с рабочего места
-                                </span>
-                                <span class="tag tag_dark">
-                                    Несоблюдение порядка
-                                </span>
-                            </div>
-                        </div>
-                        <div class="examples__img">
-                            <img src="./images/example.png" alt="">
-                        </div>
-                    </div>
-                    <span class="lettering-small examples__lettering">
-                        Демонстрация работы системы
-                    </span>
-                </div>
-            </section>
-            <section class="section suitable" id="suitable">
-                <div class="container">
-                    <div class="suitable__tags">
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            Гипермаркет
-                        </span>
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-house"></i>
-                            Магазин у дома
-                        </span>
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            Специализированные магазины
-                        </span>
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-mug-saucer"></i>
-                            Рестораны быстрого питания
-                        </span>
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-pills"></i>
-                            Аптеки
-                        </span>
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-gas-pump"></i>
-                            АЗС
-                        </span>
-                        <span class="tag tag_light tag_icon">
-                            <i class="fa-solid fa-vault"></i>
-                            Банки
-                        </span>
-                    </div>
-                    <div class="section__head section__head_light">
-                        <h2 class="title-section">
-                            Для кого подойдет  решение ActivePOS?
-                        </h2>
-                        <div class="section__head-block">
-                            <p class="text-standard">
-                                События с кассы, попадая в ActivePOS,  проходят проверку по заданным вами  параметрам. 
-                            </p>
-                            <button class="button button_secondary suitable__button_desk">
-                                Заказать консультацию
-                            </button>
-                        </div>
-                    </div>
-                    <div class="suitable__wrapper js-tabs">
-                        <ul class="tabs__head">
-                            <li class="tabs__item js-tabsItem is-active">
-                                Владельцу бизнеса
-                            </li>
-                            <li class="tabs__item js-tabsItem">
-                                Руководителю IT-отдела
-                            </li>
-                            <li class="tabs__item js-tabsItem">
-                                Начальнику службы безопасности
-                            </li>
-                        </ul>
-                        <div class="tabs__wrapper">
-                            <div class="tabs__content js-tabsContent is-active">
-                                <div class="suitable__tab">
-                                    <div class="suitable__aside">
-                                        <div class="suitable__img">
-                                            <img src="./images/suitable.png" alt="">
-                                        </div>
-                                        <span class="lettering-small suitable__lettering">
-                                            Демонстрация работы системы
-                                        </span>
-                                    </div>
-                                    <ul class="suitable__list">
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-camera"></i>
-                                            Отследить и зафиксировать на видео любые подозрительные действия кассиров и получить полный отчёт
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-satellite-dish"></i>
-                                            Удалённо подключиться к системе в любой момент без необходимости приезжатьв магазин лично
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-hand-holding-heart"></i>
-                                            Повысить лояльность покупателей к своему магазину или розничной сети
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-money-bill-trend-up"></i>
-                                            Свести к минимуму убытки в каждом отдельно взятом магазине или ресторане
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-handcuffs"></i>
-                                            Максимально сократить потери от воровства кассиров и персонала
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-face-smile-beam"></i>
-                                            Существенно улучшить сервис, предоставляемый своим клиентам
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tabs__content js-tabsContent">
-                                <div class="suitable__tab">
-                                    <div class="suitable__aside">
-                                        <div class="suitable__img">
-                                            <img src="./images/suitable.png" alt="">
-                                        </div>
-                                        <span class="lettering-small suitable__lettering">
-                                            Демонстрация работы системы
-                                        </span>
-                                    </div>
-                                    <ul class="suitable__list">
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-code-compare"></i>
-                                            Простая интеграция с другими компонентами комплексное системы безопасности (система видеонаблюдения или СКУД)
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-network-wired"></i>
-                                            Лёгкость установки в торговых точках и последующей интеграции с уже существующим кассовым оборудованием
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-robot"></i>
-                                            Возможность настройки реакции на любое из событий кассового терминала
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-message"></i>
-                                            Технической поддержка 7 дней в неделю: своевременная помощь в решении задач
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-laptop-code"></i>
-                                            Совместимость с большинством популярных кассовых и торговых систем на рынке (IIKO, 1C, Штрих-М, Атол и другими)
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-rotate"></i>
-                                            Регулярные бесплатные обновления:
-                                            позволяют всегда иметь в своём
-                                            распоряжении самую свежую и актуальную версию системы
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tabs__content js-tabsContent">
-                                <div class="suitable__tab">
-                                    <div class="suitable__aside">
-                                        <div class="suitable__img">
-                                            <img src="./images/suitable.png" alt="">
-                                        </div>
-                                        <span class="lettering-small suitable__lettering">
-                                            Демонстрация работы системы
-                                        </span>
-                                    </div>
-                                    <ul class="suitable__list">
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-satellite-dish"></i>
-                                            Проводить автоматическое выявление всех подозрительных инцидентов
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-circle-exclamation"></i>
-                                            Выявление на какой кассе чаще всего происходят события
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-chart-line"></i>
-                                            Значительно увеличить эффективность
-                                            работы операторов и сотрудников
-                                            службы безопасности
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-scale-unbalanced-flip"></i>
-                                            Определение подозрительных пробиваний слишком малых весов крупных товаров (10 грамм арбуза)
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-barcode"></i>
-                                            Выявлять и фиксировать все факты
-                                            сторнирования (отмены кассиром оплаченныхтоваров в чеке)
-                                        </li>
-                                        <li class="suitable__item">
-                                            <i class="fa-solid fa-file-lines"></i>
-                                            Иметь полную и достоверную информацию обо всех случаях умышленного и неумышленного ущерба
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="button button_secondary suitable__button_mob">
-                        Заказать консультацию
-                    </button>
-                </div>
-            </section>
-            <section class="section work" id="work">
-                <div class="container">
-                    <div class="section__head">
-                        <h2 class="title-section">
-                            Как работает модуль ActivePOS
-                        </h2>
-                        <div class="section__head-block">
-                            <p class="text-standard">
-                                События с кассы, попадая в ActivePOS, проходят проверку  по заданным вами параметрам. При выявлении нарушений  формируется инцидент — уведомление о нарушении  с коротким видео, который выводится на монитор оператора.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="work__wrapper">
-                        <div class="work__item">
-                            <div class="work__outer">
-                                <div class="work__inner">
-                                    <div class="work__img">
-                                        <img src="./images/work_1.png" alt="">
-                                    </div>
-                                </div>
-                                <h3 class="title-xs work__title">
-                                    Синхронизация данных
-                                </h3>
-                            </div>
-                            <p class="text-small work__text">
-                                События с кассы и весового контроля синхронизированы с видеопотоком
-                            </p>
-                        </div>
-                        <div class="work__item">
-                            <div class="work__outer">
-                                <div class="work__inner">
-                                    <div class="work__img">
-                                        <img src="./images/work_2.png" alt="">
-                                    </div>
-                                </div>
-                                <h3 class="title-xs work__title">
-                                    Поиск и отбор событий по параметрам
-                                </h3>
-                            </div>
-                            <p class="text-small work__text">
-                                В модуле есть возможность искать и отбирать определённые события
-                            </p>
-                        </div>
-                        <div class="work__item">
-                            <div class="work__outer">
-                                <div class="work__inner">
-                                    <div class="work__img">
-                                        <img src="./images/work_3.png" alt="">
-                                    </div>
-                                </div>
-                                <h3 class="title-xs work__title">
-                                    Функциональность
-                                </h3>
-                            </div>
-                            <p class="text-small work__text">
-                                Клиент может выводить инциденты оператору, просматривать моменты в записи и формировать отчёты
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section problems" id="problems">
+            <section class="section problems problems_hero" id="benefits">
                 <div class="container">
                     <div class="section__head section__head_light">
                         <h2 class="title-section">
-                            Какие проблемы  решает ActivePOS?
+                            Наши преимущества
                         </h2>
-                        <div class="section__head-block">
-                            <p class="text-standard">
-                                Мы обнаружили самые популярные проблемы,  с которыми сталкивается почти каждый клиент,  и показываем как решаются благодаря ActivePOS
-                            </p>
-                        </div>
                     </div>
-                    <div class="problems__wrapper js-tabs js-problemsButtonsParent">
-                        <div class="problems__buttons js-problemsButtons">
-                            <button class="problems__button js-tabsItem is-active">
-                                Аннулирование чека
+                    <div class="problems__wrapper js-problemWrapper js-tabWrapper">
+                        <div class="problems__buttons js-tabButtons">
+                            <button class="problems__button js-problemThumb is-active">
+                                Экономия времени
                             </button>
-                            <button class="problems__button js-tabsItem">
-                                Фиктивный возврат
+                            <button class="problems__button js-problemThumb">
+                                Увеличение дохода
                             </button>
-                            <button class="problems__button js-tabsItem">
-                                Личная дисконтная карта кассира
-                            </button>
-                            <button class="problems__button js-tabsItem">
-                                Открытие кассы наличных  без оплаты
-                            </button>
-                            <button class="problems__button js-tabsItem">
-                                Продажа алкоголя без проверки возраста покупателя
-                            </button>
-                            <button class="problems__button js-tabsItem">
-                                Игнорирование проверки  крупных купюр
+                            <button class="problems__button js-problemThumb">
+                                Снижение потерь
                             </button>
                         </div>
                         <div class="problems__contents">
-                            <div class="problems__content js-tabsContent is-active">
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Описание проблемы
+                            <div class="swiper js-problemSlider">
+                                <div class="swiper-wrapper">
+                                    <div class="problems__content swiper-slide">
+                                        <div class="problems__name">
+                                            Экономия времени
+                                        </div>
+                                        <ul class="problems__list">
+                                            <li class="problems__list-item">
+                                                Расследование <br> инцидента
+                                                <span class="problems__list-text">
+                                                    до 2-х мин
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Скорость реакции <br> на инциденты
+                                                <span class="problems__list-text">
+                                                    до 5 сек
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Автоматизация доступа <br> на объект
+                                                <span class="problems__list-text">
+                                                    до 3 сек
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Оперативная идентификация <br> с точностью
+                                                <span class="problems__list-text">
+                                                    99%
+                                                </span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="problems__text">
-                                        Оператор или администратор намеренное производит  махинации с кассовым аппаратом, которые  необходимо выявлять и предотвращать.
+                                    <div class="problems__content swiper-slide">
+                                        <div class="problems__name">
+                                            Увеличение дохода
+                                        </div>
+                                        <ul class="problems__list">
+                                            <li class="problems__list-item">
+                                                Увеличение количество <br> чеков на одну кассу
+                                                <span class="problems__list-text">
+                                                    до 9%
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Повышение оборота <br> продукции и выручки
+                                                <span class="problems__list-text">
+                                                    до 5%
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Увеличение количества <br> спонтанных покупок клиентов
+                                                <span class="problems__list-text">
+                                                    до 7%
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Улучшения привлекательности вашей рекламы
+                                                <span class="problems__list-text">
+                                                    до 12%
+                                                </span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Решение проблемы с <span>ActivePOS</span>
-                                    </div>
-                                    <div class="problems__text">
-                                        Просмотр инцидентов аннулированных чеков, оплаченных наличными.
-                                    </div>
-                                </div>
-                                <button class="button button_secondary js-showImg" data-src="./images/hero.png">
-                                    Скриншот работы системы
-                                </button>
-                            </div>
-                            <div class="problems__content js-tabsContent">
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Описание проблемы 1
-                                    </div>
-                                    <div class="problems__text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam laborum consequuntur cum, iure consequatur repellat sequi provident quos ipsam magnam impedit obcaecati, vitae suscipit odio eos ipsum, reiciendis minus deleniti.
-                                    </div>
-                                </div>
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Решение проблемы с <span>ActivePOS 123</span>
-                                    </div>
-                                    <div class="problems__text">
-                                        Просмотр инцидентов аннулированных чеков, оплаченных наличными. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptatum unde veniam aperiam officiis, quasi deleniti, consequatur a alias, reprehenderit repellendus nam? Vitae accusamus quis assumenda reprehenderit veritatis eligendi! Facere.
-                                    </div>
-                                </div>
-                                <button class="button button_secondary js-showImg" data-src="./images/hero.png">
-                                    Скриншот работы системы
-                                </button>
-                            </div>
-                            <div class="problems__content js-tabsContent">
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Описание проблемы 2
-                                    </div>
-                                    <div class="problems__text">
-                                        Оператор или администратор Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam laborum consequuntur cum, iure consequatur repellat sequi provident quos ipsam magnam impedit obcaecati, vitae suscipit odio eos ipsum, reiciendis minus deleniti.
+                                    <div class="problems__content swiper-slide">
+                                        <div class="problems__name">
+                                            Снижение потерь
+                                        </div>
+                                        <ul class="problems__list">
+                                            <li class="problems__list-item">
+                                                Снижение воровста <br> клиентови сотрудников
+                                                <span class="problems__list-text">
+                                                    до 50%
+                                                </span>
+                                            </li>
+                                            <li class="problems__list-item">
+                                                Снижения количества <br> отказов от покупок
+                                                <span class="problems__list-text">
+                                                    до 10%
+                                                </span>
+                                            </li>
 
+                                            
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Решение проблемы с <span>ActivePOS</span>
-                                    </div>
-                                    <div class="problems__text">
-                                        Просмотр инцидентов аннулированных чеков, оплаченных наличными.
-                                    </div>
-                                </div>
-                                <button class="button button_secondary js-showImg" data-src="./images/hero.png">
-                                    Скриншот работы системы
-                                </button>
-                            </div>
-                            <div class="problems__content js-tabsContent">
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Описание проблемы 3
-                                    </div>
-                                    <div class="problems__text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam laborum consequuntur cum, iure consequatur repellat sequi provident quos ipsam magnam impedit obcaecati, vitae suscipit odio eos ipsum, reiciendis minus deleniti.предотвращать.
-                                    </div>
-                                </div>
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Решение проблемы с <span>ActivePOS</span>
-                                    </div>
-                                    <div class="problems__text">
-                                        Просмотр инцидентов аннулированных чеков, оплаченных наличными.
-                                    </div>
-                                </div>
-                                <button class="button button_secondary js-showImg" data-src="./images/hero.png">
-                                    Скриншот работы системы
-                                </button>
-                            </div>
-                            <div class="problems__content js-tabsContent">
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Описание проблемы 4
-                                    </div>
-                                    <div class="problems__text">
-                                        Оператор или администратор намеренное производит  махинации с кассовым аппаратом, которые  необходимо выявлять и предотвращать.
-                                    </div>
-                                </div>
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Решение проблемы с <span>ActivePOS</span>
-                                    </div>
-                                    <div class="problems__text">
-                                        Просмотр инцидентов аннулированных чеков, оплаченных наличными.
-                                    </div>
-                                </div>
-                                <button class="button button_secondary js-showImg" data-src="./images/hero.png">
-                                    Скриншот работы системы
-                                </button>
-                            </div>
-                            <div class="problems__content js-tabsContent">
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Описание проблемы 5
-                                    </div>
-                                    <div class="problems__text">
-                                        Оператор или администратор намеренное производит  махинации с кассовым аппаратом, которые  необходимо выявлять и предотвращать.
-                                    </div>
-                                </div>
-                                <div class="problems__block">
-                                    <div class="problems__lettering">
-                                        Решение проблемы с <span>ActivePOS</span>
-                                    </div>
-                                    <div class="problems__text">
-                                        Просмотр инцидентов аннулированных чеков, оплаченных наличными.
-                                    </div>
-                                </div>
-                                <button class="button button_secondary js-showImg" data-src="./images/hero.png">
-                                    Скриншот работы системы
-                                </button>
+                                <div class="js-problemSilderScroll swiper-scrollbar swiper-scrollbar_light"></div>
+                                <div class="swiper-pagination swiper-pagination_light js-problemSilderPagination"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="section feedback" id="feedback">
+            <section class="section integration section_transparent" id="integration">
+                <div class="container">
+                    <div class="integration__aside">
+                        <h2 class="lettering-large integration__title">
+                            Интеграции
+                        </h2>
+                        <h4 class="integration__chapter">
+                            СКУД
+                        </h4>
+                        <ul class="integration__tags">
+                            <li class="tag tag_white">TRASSIR.СКУД</li>
+                            <li class="tag tag_white">NeoGuard</li>
+                            <li class="tag tag_white">Gate</li>
+                            <li class="tag tag_white">Итриум</li>
+                            <li class="tag tag_white">Parsec</li>
+                            <li class="tag tag_white">Sigur</li>
+                            <li class="tag tag_white">Bolid</li>
+                            <li class="tag tag_white">HikVision</li>
+                        </ul>
+                        <h4 class="integration__chapter">
+                            Охранно-пожарные системы
+                        </h4>
+                        <ul class="integration__tags">
+                            <li class="tag tag_white">Bolid</li>
+                            <li class="tag tag_white">Rubezh</li>
+                            <li class="tag tag_white">Schrack Technik</li>
+                            <li class="tag tag_white">BOSCH</li>
+                        </ul>
+                        <h4 class="integration__chapter">
+                            Иные системы
+                        </h4>
+                        <ul class="integration__tags">
+                            <li class="tag tag_white">Netping</li>
+                            <li class="tag tag_white">TFortis</li>
+                            <li class="tag tag_white">TRASSIR</li>
+                            <li class="tag tag_white">SPICA</li>
+                        </ul>
+                    </div>
+                    <div class="integration__wrapper">
+                        <div class="lettering-large integration__title_mob">
+                            Интеграции
+                        </div>
+                        <div class="integration__content">
+                            TRASSIR – это полноценная PSIM платформа, позволяющая интегрировать имеющиеся у вас системы, например, СКУД, ОПС и другие.
+                        </div>
+                        <ul class="integration__list">
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Открытие шлагбаумов по номерам машин из белого списка
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Двухфакторная идентификация по распознаванию лиц и пропускам
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Проход через турникет по распознаванию лица
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Вывод камеры на тревожный монитор по событию с датчика
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Управление устройствами СКУД через интерфейс TRASSIR
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Мониторинг здоровья всех устройств в одной системе
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                Поиск архива по событиям <br> из СКУД и ОПС
+                            </li>
+                            <li class="integration__item">
+                                <i class="fa-solid fa-car"></i>
+                                ЕЦХД передача видео в соотстветствии с законом
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section solutions section_transparent js-solutions" id="solutions">
+                <div class="container">
+                    <div class="section__head">
+                        <h2 class="title-section">
+                            Готовые решения 
+                            <span class="solutions__count">8</span>
+                        </h2>
+
+                        <div class="slider-nav">
+                            <button class="slider-nav__button slider-nav__button_prev js-solutionsSilderPrev"></button>
+                            <button class="slider-nav__button slider-nav__button_next js-solutionsSilderNext"></button>
+                        </div>
+                    </div>
+                    <div class="solutions-thumbs js-solutionsSilderThumbs swiper">
+                        <ul class="solutions-thumbs__wrapper swiper-wrapper">
+                            <li class="solutions-thumbs__item  swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 1
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 2
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 3
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 4
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 5
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 6
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 7
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="solutions-thumbs__item swiper-slide">
+                                <i class="fa-solid fa-user-check"></i>
+                                <div class="solutions-thumbs__inner">
+                                    <span class="solutions-thumbs__lettering">
+                                        TRASSIR ActivePOS
+                                    </span>
+                                    <span class="solutions-thumbs__name">
+                                        Интеллектуальный контроль кассовых операций 8
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="js-solutionsSilderScroll swiper-scrollbar swiper-scrollbar_dark solutions__scroll"></div>
+                    <div class="solutions__wrapper swiper js-solutionsSilder">
+                        <div class="swiper-wrapper">
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 1
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 2
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 3
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 4
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 5
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 6
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 7
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solutions-card swiper-slide">
+                                <div class="solutions-card__img">
+                                    <img src="./local_images/hero.png" alt="">
+                                </div>
+                                <div class="solutions-card__wrapper">
+                                    <div class="solutions-card__head">
+                                        <div class="solutions-card__tags">
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Магазины
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Отели
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Рестораны и кафе
+                                            </span>
+                                            <span class="tag tag_icon">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                Банки
+                                            </span>
+                                        </div>
+                                        <h3 class="solutions-card__title">
+                                            TRASSIR ActivePOS 8
+                                        </h3>
+                                        <p class="solutions-card__subtitle">
+                                            Интеллектуальный модуль обеспечивающий синхронизацию кассы с видеопотоком, который обеспечивает сокращение финансовых потерь.
+                                        </p>
+                                    </div>
+                                    <ul class="benefits-list">
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            Снизим ваши потери от мошенничества сотрудников на 50%
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                            35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                        </li>
+                                        <li class="benefits-list__item">
+                                            <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                        </li>
+                                    </ul>
+                                    <div class="solutions-card__bottom">
+                                        <div class="solutions-card__inner">
+                                            <div class="solutions-card__prices-title">
+                                                Стоимость
+                                            </div>
+                                            <div class="solutions-card__prices">
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                                <div class="solutions-card__price-block">
+                                                    <div class="solutions-card__price">
+                                                        6 600 ₽
+                                                    </div>
+                                                    <div class="lettering-small">
+                                                        1 модуль ActivePOS на 1 кассовый терминал
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" target="_blank" class="button button_primary">
+                                            Перейти на сайт
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section possibilities" id="possibilities">
+                <div class="container">
+                    <div class="section__head section__head_light">
+                        <h2 class="title-section">
+                            Возможности <br> видеонаблюдения <br> TRASSIR
+                        </h2>
+                        
+                        <button class="button button_secondary">
+                            Получить расчёт видеонаблюдения
+                        </button>
+                    </div>
+                    <div class="possibilities__block js-tabWrapper">
+                        <div class="possibilities-thumbs js-tabButtons">
+                            <button class="possibilities-thumbs__item js-possibilitiesThumb is-active">
+                                Ситуационный центр
+                            </button>
+                            <button class="possibilities-thumbs__item js-possibilitiesThumb">
+                                Управление объектами
+                            </button>
+                            <button class="possibilities-thumbs__item js-possibilitiesThumb">
+                                Видеоархив
+                            </button>
+                            <button class="possibilities-thumbs__item js-possibilitiesThumb">
+                                Глобальный поиск
+                            </button>
+                        </div>
+                        <div class="possibilities__wrapper swiper js-possibilitiesSlider">
+                            <div class="swiper-wrapper">
+                                <div class="possibilities__item swiper-slide">
+                                    <div class="possibilities__inner">
+                                        <div class="possibilities__top">
+                                            <h3 class="possibilities__title">
+                                                Создание полноценного <br> ситуационного центра
+                                            </h3>
+                                            <p class="possibilities__subtitle">
+                                                Индивидуальные настройки TRASSIR, чтобы при возникновении заданного выводились события
+                                            </p>
+                                        </div>
+                                        <ul class="benefits-list">
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                Снизим ваши потери от мошенничества сотрудников на 50%
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                            </li>
+                                        </ul>
+                                        <button class="button button_tertiary possibilities__button">
+                                            Оставить заявку
+                                        </button>
+                                    </div>
+                                    <div class="possibilities__img">
+                                        <img src="./local_images/hero.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="possibilities__item swiper-slide">
+                                    <div class="possibilities__inner">
+                                        <div class="possibilities__top">
+                                            <h3 class="possibilities__title">
+                                                Создание полноценного <br> ситуационного центра
+                                            </h3>
+                                            <p class="possibilities__subtitle">
+                                                Индивидуальные настройки TRASSIR, чтобы при возникновении заданного выводились события
+                                            </p>
+                                        </div>
+                                        <ul class="benefits-list">
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                Снизим ваши потери от мошенничества сотрудников на 50%
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                            </li>
+                                        </ul>
+                                        <button class="button button_tertiary possibilities__button">
+                                            Оставить заявку
+                                        </button>
+                                    </div>
+                                    <div class="possibilities__img">
+                                        <img src="./local_images/hero.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="possibilities__item swiper-slide">
+                                    <div class="possibilities__inner">
+                                        <div class="possibilities__top">
+                                            <h3 class="possibilities__title">
+                                                Создание полноценного <br> ситуационного центра
+                                            </h3>
+                                            <p class="possibilities__subtitle">
+                                                Индивидуальные настройки TRASSIR, чтобы при возникновении заданного выводились события
+                                            </p>
+                                        </div>
+                                        <ul class="benefits-list">
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                Снизим ваши потери от мошенничества сотрудников на 50%
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                            </li>
+                                        </ul>
+                                        <button class="button button_tertiary possibilities__button">
+                                            Оставить заявку
+                                        </button>
+                                    </div>
+                                    <div class="possibilities__img">
+                                        <img src="./local_images/hero.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="possibilities__item swiper-slide">
+                                    <div class="possibilities__inner">
+                                        <div class="possibilities__top">
+                                            <h3 class="possibilities__title">
+                                                Создание полноценного <br> ситуационного центра
+                                            </h3>
+                                            <p class="possibilities__subtitle">
+                                                Индивидуальные настройки TRASSIR, чтобы при возникновении заданного выводились события
+                                            </p>
+                                        </div>
+                                        <ul class="benefits-list">
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                Снизим ваши потери от мошенничества сотрудников на 50%
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>
+                                                35 000 модулей ActivePOS ежедневно сокращают финансовые потери клиентов
+                                            </li>
+                                            <li class="benefits-list__item">
+                                                <i class="fa-solid fa-chart-simple"></i>ActivePOS сокращают потери у X5 Retail Group, Окей, Лента, Магнит, SPAR и других
+                                            </li>
+                                        </ul>
+                                        <button class="button button_tertiary possibilities__button">
+                                            Оставить заявку
+                                        </button>
+                                    </div>
+                                    <div class="possibilities__img">
+                                        <img src="./local_images/hero.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination_light js-possibilitiesSilderPagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section partners section_transparent" id="partners">
+                <div class="container">
+                    <div class="partners__wrapper">
+                        <h2 class="title-section">
+                            Наши партнеры
+                        </h2>
+                        <ul class="partners__list">
+                            <li class="partners__item">
+                                <img src="./images/partners/trassir.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/hikvision.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/hiwatch.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/beward.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/dahua.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/wisenet.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/relion.png" alt="">
+                            </li>
+                            <li class="partners__item">
+                                <img src="./images/partners/unv.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section cases section_transparent" id="cases">
+                <div class="container">
+                    <div class="section__head">
+                        <h2 class="title-section">
+                            Безопасность своих объектов <br> нам доверяют
+                        </h2>
+                    </div>
+                    <div class="cases__wrapper">
+                        <div class="card-case">
+                            <div class="card-case__head" style="background-image: url(./local_images/case.png);">
+                                <div class="card-case__tags">
+                                    <span class="tag tag_icon">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        Торговля
+                                    </span>
+                                </div>
+                                <div class="card-case__info">
+                                    <h3 class="card-case__title">
+                                        SPAR
+                                    </h3>
+                                    <p class="card-case__subtitle">
+                                        Нидерландская сеть магазинов
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-case__content">
+                                <div class="card-case__inner">
+                                    <div class="card-case__chapter">
+                                        Реализация
+                                    </div>
+                                    <p class="card-case__text">
+                                        Видеонаблюдение и система распознавания лиц с аналитикой. Функция «Черного списка». Контроль кассовых и весовых операций.
+                                    </p>
+                                </div>
+                                <div class="card-case__inner">
+                                    <div class="card-case__chapter">
+                                        Использованное оборудование
+                                    </div>
+                                    <div class="card-case__tags">
+                                        <span class="tag tag_primary">
+                                            IP Камеры Trassir
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            Модуль Face Recognition
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            ActivePOS
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            Видеорегистраторы NeuroStation
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-case">
+                            <div class="card-case__head" style="background-image: url(./local_images/case.png);">
+                                <div class="card-case__tags">
+                                    <span class="tag tag_icon">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        Торговля
+                                    </span>
+                                </div>
+                                <div class="card-case__info">
+                                    <h3 class="card-case__title">
+                                        SPAR
+                                    </h3>
+                                    <p class="card-case__subtitle">
+                                        Нидерландская сеть магазинов
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-case__content">
+                                <div class="card-case__inner">
+                                    <div class="card-case__chapter">
+                                        Реализация
+                                    </div>
+                                    <p class="card-case__text">
+                                        Видеоконтроль для предотвращения краж, мошенничества на кассах, для взвешивания продуктов. Видеонаблюдение с распознаванаием лиц.
+                                    </p>
+                                </div>
+                                <div class="card-case__inner">
+                                    <div class="card-case__chapter">
+                                        Использованное оборудование
+                                    </div>
+                                    <div class="card-case__tags">
+                                        <span class="tag tag_primary">
+                                            IP Камеры Trassir
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            Модуль Face Recognition
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            ActivePOS
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            Видеорегистраторы NeuroStation
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-case">
+                            <div class="card-case__head" style="background-image: url(./local_images/case.png);">
+                                <div class="card-case__tags">
+                                    <span class="tag tag_icon">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        Торговля
+                                    </span>
+                                </div>
+                                <div class="card-case__info">
+                                    <h3 class="card-case__title">
+                                        SPAR
+                                    </h3>
+                                    <p class="card-case__subtitle">
+                                        Нидерландская сеть магазинов
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-case__content">
+                                <div class="card-case__inner">
+                                    <div class="card-case__chapter">
+                                        Реализация
+                                    </div>
+                                    <p class="card-case__text">
+                                        Видеонаблюдение и система распознавания лиц с аналитикой. 
+                                    </p>
+                                </div>
+                                <div class="card-case__inner">
+                                    <div class="card-case__chapter">
+                                        Использованное оборудование
+                                    </div>
+                                    <div class="card-case__tags">
+                                        <span class="tag tag_primary">
+                                            IP Камеры Trassir
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            Модуль Face Recognition
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            ActivePOS
+                                        </span>
+                                        <span class="tag tag_primary">
+                                            Видеорегистраторы NeuroStation
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section help" id="help" style="background-image: url('./local_images/help.png');">
+                <div class="container">
+                    <div class="section__head section__head_light">
+                        <h2 class="title-section">
+                            <span>Мы знаем как</span> помочь вам
+                        </h2>
+                    </div>
+                    <ul class="help__list">
+                        <li class="help__item">
+                            <span class="help__name">20</span>
+                            Лет опыта в сфере <br> видеонаблюдения
+                        </li>
+                        <li class="help__item">
+                            <span class="help__name">21</span>
+                            Офисов и складов <br> на территории России
+                        </li>
+                        <li class="help__item">
+                            <span class="help__name">5 000+</span>
+                            Постоянных <br> клиентов
+                        </li>
+                        <li class="help__item">
+                            <span class="help__name">800+</span>
+                            Квалифицированных сотрудников
+                        </li>
+                        <li class="help__item">
+                            <span class="help__name">50+</span>
+                            Модулей видеоаналитики
+                        </li>
+                        <li class="help__item">
+                            <span class="help__name">12 000+</span>
+                            Позиций в ассортименте
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section clients section_transparent" id="clients">
+                <div class="container">
+                    <div class="section__head">
+                        <h2 class="title-section">
+                            Нам доверяют
+                        </h2>
+                    </div>
+                    <ul class="clients__list">
+                        <li class="clients__item">
+                            <img src="./images/clients/rjd.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/sber.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/leroymerlin.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/rosneft.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/yandex.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/ozon.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/piaterochka.png" alt="">
+                        </li>
+                        <li class="clients__item">
+                            <img src="./images/clients/perekrestok.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section certificate section_transparent" id="certificate">
+                <div class="container">
+                    <div class="section__head">
+                        <h2 class="title-section">
+                            Сертификаты и реестр
+                        </h2>
+
+                        <div class="slider-nav">
+                            <button class="slider-nav__button slider-nav__button_prev js-certificateSilderPrev"></button>
+                            <button class="slider-nav__button slider-nav__button_next js-certificateSilderNext"></button>
+                        </div>
+                    </div>
+                    <div class="certificate__wrapper swiper js-certificateSilder">
+                        <div class="swiper-wrapper">
+                            <div class="certificate__item swiper-slide">
+                                <div class="certificate__img">
+                                    <img src="./local_images/certificate.png" alt="">
+                                </div>
+                                <div class="certificate__inner">
+                                    <h3 class="certificate__title">
+                                        Сертификат ISO 9001
+                                    </h3>
+                                    <p class="certificate__text">
+                                        Подтверждает соостветствие ведения системы менеджмента на предприятии стандартам серии ISO
+                                    </p>
+                                </div>
+                                <div class="certificate__bottom">
+                                    <a href="javascript:void(0)" download class="certificate__link">
+                                        Скачать
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="certificate__item swiper-slide">
+                                <div class="certificate__img">
+                                    <img src="./local_images/certificate.png" alt="">
+                                </div>
+                                <div class="certificate__inner">
+                                    <h3 class="certificate__title">
+                                        Сертификат ТБ №969
+                                    </h3>
+                                    <p class="certificate__text">
+                                        TRASSIR Server (под управлением Linux OS) соответствует пп. №969 от 26.09.2016 о Транспортной Безопасности Сертификат на сайте МВД РФ
+                                    </p>
+                                </div>
+                                <div class="certificate__bottom">
+                                    <a href="javascript:void(0)" download class="certificate__link">
+                                        Скачать
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="certificate__item swiper-slide">
+                                <div class="certificate__img">
+                                    <img src="./images/icons/certificate-stub.svg" alt="">
+                                </div>
+                                <div class="certificate__inner">
+                                    <h3 class="certificate__title">
+                                        Реестр отечественного ПО
+                                    </h3>
+                                    <p class="certificate__text">
+                                        ПО TRASSIR внесено «Единый реестр российских программ для электронных вычислительных машин и баз данных»
+                                    </p>
+                                </div>
+                                <div class="certificate__bottom">
+                                    <a href="javascript:void(0)" target="_blank" class="certificate__link">
+                                        reestr.digital.gov.ru
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="certificate__item swiper-slide">
+                                <div class="certificate__img">
+                                    <img src="./images/icons/certificate-stub.svg" alt="">
+                                </div>
+                                <div class="certificate__inner">
+                                    <h3 class="certificate__title">
+                                        Реестр отечественного ПО
+                                    </h3>
+                                    <p class="certificate__text">
+                                        ПО TRASSIR внесено «Единый реестр российских программ для электронных вычислительных машин и баз данных»
+                                    </p>
+                                </div>
+                                <div class="certificate__bottom">
+                                    <a href="javascript:void(0)" target="_blank" class="certificate__link">
+                                        reestr.digital.gov.ru
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="certificate__item swiper-slide">
+                                <div class="certificate__img">
+                                    <img src="./images/icons/certificate-stub.svg" alt="">
+                                </div>
+                                <div class="certificate__inner">
+                                    <h3 class="certificate__title">
+                                        Реестр отечественного ПО
+                                    </h3>
+                                    <p class="certificate__text">
+                                        ПО TRASSIR внесено «Единый реестр российских программ для электронных вычислительных машин и баз данных»
+                                    </p>
+                                </div>
+                                <div class="certificate__bottom">
+                                    <a href="javascript:void(0)" target="_blank" class="certificate__link">
+                                        reestr.digital.gov.ru
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-pagination swiper-pagination_dark js-certificateSilderPagination"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section feedback section_transparent" id="feedback">
                 <div class="container">
                     <div class="feedback__block">
                         <h2 class="title-section feedback__title">
@@ -696,12 +1556,177 @@
                     </div>
                 </div>
             </section>
+
+            <section class="section bonus section_transparent" id="bonus">
+                <div class="container">
+                    <span class="bonus__time">
+                        <i class="fa-regular fa-clock"></i>
+                        01.03.2024 — 31.05.2024
+                    </span>
+                    <div class="section__head">
+                        <div class="section__head-block section__head-block_column">
+                            <h2 class="title-section">
+                                Welcome Bonus
+                            </h2>
+                            <p class="text-standard">
+                                Если новые клиент* совершает покупку в период акции любой продукции из ассортимента DSSL на определеннную сумму , вы получите Welcome Bonus**. Если в вашей запупке доля продукции торговой марки TRASSIR будет больше 70%, то сумма вашего бонуса удвоится
+                            </p>
+                        </div>
+                        <div class="section__head-block section__head-block_end">
+                            <button class="button button_tertiary">
+                                Получить бонус
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bonus__wrapper">
+                        <div class="bonus-item">
+                            <h4 class="bonus-item__title">
+                                Бесплатные опции
+                            </h4>
+                            <ul class="bonus-item__check-list">
+                                <li class="bonus-item__check-item">
+                                    Выезд на объект
+                                </li>
+                                <li class="bonus-item__check-item">
+                                    Обследование объекта
+                                </li>
+                                <li class="bonus-item__check-item">
+                                    Подбор оборудования
+                                </li>
+                                <li class="bonus-item__check-item">
+                                    Схема расстановки
+                                </li>
+                            </ul>
+                            <span class="bonus-item__lettering">
+                                При предоставлении планировки помещения
+                            </span>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__head">
+                                <div class="bonus-label">
+                                    Сумма закупки
+                                    <span class="bonus-label__value">
+                                        30 000 – 50 000 ₽
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="bonus-label">
+                                Приветственный бонус
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    1 000 ₽
+                                </span>
+                            </div>
+                            <div class="bonus-label">
+                                Бонус при доле TM Trassir больше 70%
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    2 000 ₽
+                                </span>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__head">
+                                <div class="bonus-label">
+                                    Сумма закупки
+                                    <span class="bonus-label__value">
+                                        50 001 – 100 000 ₽
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="bonus-label">
+                                Приветственный бонус
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    2 000 ₽
+                                </span>
+                            </div>
+                            <div class="bonus-label">
+                                Бонус при доле TM Trassir больше 70%
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    4 000 ₽
+                                </span>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__head">
+                                <div class="bonus-label">
+                                    Сумма закупки
+                                    <span class="bonus-label__value">
+                                        100 001 – 150 000 ₽
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="bonus-label">
+                                Приветственный бонус
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    4 000 ₽
+                                </span>
+                            </div>
+                            <div class="bonus-label">
+                                Бонус при доле TM Trassir больше 70%
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    8 000 ₽
+                                </span>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__head">
+                                <div class="bonus-label">
+                                    Сумма закупки
+                                    <span class="bonus-label__value">
+                                        150 001 – 200 000 ₽
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="bonus-label">
+                                Приветственный бонус
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    6 000 ₽
+                                </span>
+                            </div>
+                            <div class="bonus-label">
+                                Бонус при доле TM Trassir больше 70%
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    12 000 ₽
+                                </span>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__head">
+                                <div class="bonus-label">
+                                    Сумма закупки
+                                    <span class="bonus-label__value">
+                                        свыше 200 001 ₽
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="bonus-label">
+                                Приветственный бонус
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    8 000 ₽
+                                </span>
+                            </div>
+                            <div class="bonus-label">
+                                Бонус при доле TM Trassir больше 70%
+                                <span class="bonus-label__value bonus-label__value_success">
+                                    16 000 ₽
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bonus__lettering">
+                        * – новым считается клиент, которые не совершал закупки в компании DSSL более 6 месяцев до старта акции
+                        <br><br>
+                        ** – бонус выдаётся после подведения итогов акции в виде электронного подарочного сертификата, который будет выслан вам на электронный алдрес, указанный вами при регистрации. Для участи обязательно пройдите регистрацию
+                    </div>
+                </div>
+            </section>
         </main>
+
+
         <footer class="footer">
             <div class="container">
                 <div class="footer__wrapper">
                     <a href="#hero" class="footer__logo">
-                        <img src="./images/logo-dark.png" alt="">
+                        <img src="./images/logo-dark.svg" alt="">
                     </a>
                     <div class="footer__inner">
                         <div class="footer__block">
@@ -753,7 +1778,22 @@
             </button>
         </div>
     </div>
+
+    <!-- ЭТО ФИКС ДЛЯ ЛОКАЛЬНОЙ РАЗРАБОТКИ -->
+    <script>
+        window['BX'] = {};
+        window['BX'].message = () => {};
+        window['BX'].getCookie = () => true;
+        window['BX'].setCookie = () => {};
+    </script>
+
+
+    <script module src="vendors/js/swiper.min.js"></script>
     <script src="https://kit.fontawesome.com/105f63cbfd.js" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/certificate_silder.js"></script>
+    <script src="./js/solutions_slider.js"></script>
+    <script src="./js/possibilities_slider.js"></script>
+    <script src="./js/problems_slider.js"></script>
 </body>
 </html>

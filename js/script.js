@@ -1,20 +1,26 @@
+window.media = { lg: 1920, md: 1200, sm: 520 }
+
 document.addEventListener('DOMContentLoaded', () => {
     const initCookiePolicy = () => {
         const block = document.querySelector('.js-cookiePolisy');
+        const cookieName = BX.message('COOKIE_PREFIX') + '_COOKIE_POLICY_ACCEPTED';
         
-        if (!block) {
+        if (!block || BX.getCookie(cookieName)) {
             return false;
         }
 
         const close = block.querySelector('.js-cookiePolisyClose');
 
         close?.addEventListener('click', () => {
-            block.classList.add('is-hidden');
+            block.classList.remove('is-active');
+            BX.setCookie(cookieName, true, { expires: 31536000 });
 
             setTimeout(() => {
                 block.remove();
             }, 1000);
         });
+
+        block.classList.add('is-active');
     }
 
     const cardProductVideoInit = () => {
@@ -56,6 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('scroll', () => {
             if (header.classList.contains('is-opened')) {
+                return false;
+            }
+
+            if (window.scrollY <= 0) {
+                header.classList.remove('is-hidden');
+                prevScroll = 0;
+
                 return false;
             }
 
@@ -154,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('click', e => {
             if ((e.target.closest('.js-closeBurger') || 
+            e.target.closest('.js-headerLink') || 
             !e.target.closest('.js-headerMenu') && 
             !e.target.closest('.js-headerBurger'))) {
                 closeMenu();
@@ -163,38 +177,133 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', closeMenu);
     }
 
-    const problemsButtonsScrollInit = () => {
-        const buttons = document.querySelector('.js-problemsButtons');
+    const tabsScrollInit = () => {
+        const buttons = document.querySelectorAll('.js-tabButtons');
 
-        if (!buttons) {
-            return false;
-        }
-    
-        const parent = buttons.closest('.js-problemsButtonsParent');
-    
-        if (!parent) {
-            return false;
-        }
-    
-        parent.classList.add('is-start');
-    
-        buttons.addEventListener('scroll', () => {
-            if (Math.ceil(buttons.scrollLeft + buttons.offsetWidth) >= buttons.scrollWidth) {
-                parent.classList.add('is-end');
-            } else if (buttons.scrollLeft <= 0) {
-                parent.classList.add('is-start');
-            } else {
-                parent.classList.remove('is-end');
-                parent.classList.remove('is-start');
+        buttons.forEach(button => {
+            const parent = button.closest('.js-tabWrapper');
+        
+            if (!parent) {
+                return false;
             }
+        
+            parent.classList.remove('is-end');
+            parent.classList.add('is-start');
+            window.addEventListener('resize', tabsScrollInit);
+
+            if (button.offsetWidth == button.scrollWidth) {
+                parent.classList.add('is-end');
+                return false;
+            }
+        
+            button.addEventListener('scroll', () => {
+                if (Math.ceil(button.scrollLeft + button.offsetWidth) >= button.scrollWidth) {
+                    parent.classList.add('is-end');
+                } else if (button.scrollLeft <= 0) {
+                    parent.classList.add('is-start');
+                } else {
+                    parent.classList.remove('is-end');
+                    parent.classList.remove('is-start');
+                }
+            });
         });
     }
 
+    const targetInViewport = target => {
+        if (!target) {
+            return false;
+        }
+    
+        const rect = target.getBoundingClientRect();
+    
+        const targetPosition = {
+            top: window.scrollY + rect.top,
+            bottom: window.scrollY + rect.bottom
+        }
+    
+        const windowPosition = {
+            top: window.scrollY,
+            bottom: window.scrollY + document.documentElement.clientHeight
+        };
+        
+        return targetPosition.bottom > windowPosition.top && targetPosition.top < windowPosition.bottom
+    }
+
+    const showOnViewport = () => {
+        const elements = document.querySelectorAll('.js-viewportShow');
+
+        const showElement = element => {
+            if (!targetInViewport(element) || 
+                element.classList.contains('in-viewport')) {
+                return false;
+            }
+
+            const delay = Number(element.dataset.delay) || 1;
+
+            setTimeout(() => {
+                element.style.opacity = 1;
+            }, 300 * delay);
+
+            element.classList.add('in-viewport')
+        }
+
+        elements.forEach(element => {
+            window.addEventListener('scroll', () => {
+                showElement(element);
+            });
+
+            showElement(element);
+        });
+    }
+
+    const menuRolledInit = () => {
+        const menu = document.querySelector('.js-headerMenu');
+
+        if (!menu || (menu.offsetWidth == menu.scrollWidth)) {
+            return false;
+        }
+
+        const button = document.querySelector('.js-menuRolled');
+
+        if (!button) {
+            return false;
+        }
+
+        const rollLastLink = () => {
+            const links = menu.querySelectorAll('.js-headerLink:not(.is-rolled)')
+            links[links.length - 1].classList.add('is-rolled');
+
+            if (menu.offsetWidth != menu.scrollWidth) {
+                rollLastLink();
+            }
+        }
+
+        button.classList.add('is-shown');
+
+        button.addEventListener('click', () => {
+            const links = menu.querySelectorAll('.js-headerLink');
+
+            links.forEach(link => {
+                if (link.classList.contains('is-rolled')) {
+                    link.classList.remove('is-rolled');
+                } else {
+                    link.classList.add('is-rolled');
+                }
+            });
+
+            button.classList.toggle('is-opened');
+        });
+
+        rollLastLink();
+    }
+
+    tabsScrollInit();
+    showOnViewport();
+    menuRolledInit();
     burgerInit();
     showImgInit();
     tabsInit();
     cardProductVideoInit();
     initCookiePolicy();
     headerHideInit();
-    problemsButtonsScrollInit();
 });

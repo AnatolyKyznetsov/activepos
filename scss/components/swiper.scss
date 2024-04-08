@@ -1,0 +1,59 @@
+.swiper {
+    &-scrollbar {
+        cursor: pointer;
+
+        &_light {
+            background: var(--color-neutral-white-16);
+
+            .swiper-scrollbar-drag {
+                background: var(--color-gray-300);
+            }
+        }
+
+        &_dark {
+            background: var(--color-neutral-black-16);
+
+            .swiper-scrollbar-drag {
+                background: var(--color-primary-600);
+            }
+        }
+
+        &-drag {
+            cursor: grab;
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+
+        &-bullet {
+            border-radius: 0;
+            width: 20px;
+            height: 2px;
+            margin: 0 !important;
+            opacity: 1 !important;
+        }   
+
+        &_dark {
+            .swiper-pagination-bullet {
+                background: var(--color-neutral-black-16);
+    
+                &-active {
+                    background: var(--color-neutral-black-64);
+                }
+            }   
+        }
+
+        &_light {
+            .swiper-pagination-bullet {
+                background: var(--color-neutral-white-16);
+    
+                &-active {
+                    background: var(--color-neutral-white-64);
+                }
+            }   
+        }
+    }
+}

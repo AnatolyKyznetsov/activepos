@@ -1,0 +1,25 @@
+.cases {
+    &__wrapper {
+        display: flex;
+        // align-items: flex-start;
+        gap: 16px;
+        flex-wrap: wrap;
+
+        .card-case {
+            max-width: calc(33% - 11px);
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .cases {
+        &__wrapper {
+            flex-direction: column;
+
+            .card-case {
+                max-width: 100%;
+            }
+        }
+    }
+}

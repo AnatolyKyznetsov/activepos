@@ -1,7 +1,11 @@
 .hero {
     padding-top: 267px;
-    padding-bottom: 254px;
-    background: var(--hero-background) no-repeat bottom right / cover;
+    padding-bottom: 80px;
+    background-image:  var(--hero-background);
+    background-color: var(--hero-background-color);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover;
 
     .container {
         display: flex;
@@ -14,7 +18,7 @@
 
     &__img {
         position: absolute;
-        bottom: -153px;
+        bottom: 20px;
         right: 150px;
 
         img {
@@ -47,6 +51,10 @@
         gap: 21px;
         align-items: flex-start;
         justify-content: flex-start;
+
+        &:last-child {
+            margin-bottom: 174px;
+        }
     }
 
     &__title {
@@ -62,12 +70,35 @@
         align-items: center;
         justify-content: flex-start;
         gap: 8px;
+
+        &:last-child {
+            margin-bottom: 174px;
+        }
+    }
+
+    &__benefits {
+        @extend .about__list;
+
+        position: relative;
+        z-index: 2;
+        flex-wrap: nowrap !important;
+        margin-top: 102px;
+    }
+
+    &__benefit {
+        @extend .about__item;
+
+        color: var(--color-neutral-white-80) !important;
+
+        .title-block {
+            color: var(--color-neutral-white-100);
+        }
     }
 }
 
 @media screen and (min-width: $lg) {
     .hero {
-        background: var(--hero-background) no-repeat top center / cover;
+        background-position: bottom right;    
     }
 }
 
@@ -75,6 +106,10 @@
     .hero {
         padding-top: 227px;
         padding-bottom: 315px;
+
+        &:has(.hero__benefits) {
+            padding-bottom: 60px;
+        }
 
         &__tags {
             padding-left: 0;
@@ -91,6 +126,19 @@
             max-width: 100%;
             width: 100%;
         }
+
+        &__benefits {
+            margin-top: 16px;
+            flex-wrap: wrap !important;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .hero {
+        &+ .problems_hero {
+            padding-top: 60px;
+        }
     }
 }
 
@@ -98,7 +146,7 @@
     .hero {
         padding-top: 189px;
         padding-bottom: 284px;
-        background: var(--hero-background-mob) no-repeat bottom right / cover;
+        background-image: var(--hero-background-mob);
 
         &__buttons {
             flex-wrap: wrap;
@@ -106,6 +154,10 @@
 
         &__img {
             bottom: -260px;
+        }
+
+        &__benefits {
+            gap: 24px !important;
         }
     }
 }
